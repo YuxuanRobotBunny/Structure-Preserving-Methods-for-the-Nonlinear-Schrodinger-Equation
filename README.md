@@ -123,51 +123,6 @@ P = nlse_setup('dealias', true, 'dealias_fraction', 2/3);
 The helper functions `nlse_filter.m` and `nlse_nonlinear.m` provide the common
 filtering path used by the time steppers.
 
-## Numerical Model
-
-The default initial condition is a bright soliton profile:
-
-```math
-\psi_0(x) =
-\sqrt{\frac{2\eta^2}{\lambda}}\operatorname{sech}(\eta x)e^{i\xi x}.
-```
-
-The default parameters are:
-
-- `lambda = 1`
-- `L = 20`
-- `N = 256`
-- `T = 2`
-- `tau = 1e-3`
-- `eta = 1`
-- `xi = 1`
-
-The grid is periodic on `[-L, L)` with `N` evenly spaced points.
-
-## Notes on Invariants
-
-For the continuous focusing NLSE, the main monitored quantities are:
-
-- Mass:
-
-```math
-M[\psi] = \int |\psi|^2\,dx.
-```
-
-- Momentum:
-
-```math
-P[\psi] = \operatorname{Im}\int \bar{\psi}\psi_x\,dx.
-```
-
-- Hamiltonian energy:
-
-```math
-H[\psi] = \int \left(|\psi_x|^2 - \frac{\lambda}{2}|\psi|^4\right)\,dx.
-```
-
-The Besse relaxation scheme additionally preserves a discrete modified energy,
-which is tracked separately by `nlse_besse_energy.m`.
 
 ## Reproducibility
 
