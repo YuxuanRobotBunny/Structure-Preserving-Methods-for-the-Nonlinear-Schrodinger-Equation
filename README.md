@@ -62,14 +62,6 @@ Experiment scripts:
 
 Additional project notes and longer writeups are stored in `files/`.
 
-## Requirements
-
-- MATLAB
-- No external MATLAB toolboxes are required for the main scripts.
-
-The code uses standard MATLAB functions such as `fft`, `ifft`, `gmres`, plotting
-utilities, and basic linear algebra routines.
-
 
 ## Main Experiments
 
@@ -181,8 +173,5 @@ which is tracked separately by `nlse_besse_energy.m`.
 
 The scripts are intended to be run directly from the repository root. The setup
 function adjusts `tau` slightly so that `Nsteps * tau == T` exactly, which avoids
-small final-time mismatches across experiments.
-
-The default experiments use moderate grid sizes so they can run on a typical
-laptop. The long-time drift test is more expensive because it includes implicit
+small final-time mismatches across experiments. The long-time drift test is more expensive because it includes implicit
 Crank-Nicolson iterations.
